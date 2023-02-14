@@ -1,12 +1,18 @@
 {
-  "name": "my-ts-lib",
+  "name": "prettier-plugin-sort-markdown-table",
   "version": "0.0.0",
-  "description": "My awesome typescript library",
+  "description": "Prettier plugin that sorts markdown tables according to their first column",
   "publishConfig": {
     "access": "public"
   },
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "prettier",
+    "plugin",
+    "markdown",
+    "table"
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -24,6 +30,8 @@
   "license": "MIT",
   "devDependencies": {
     "@egoist/prettier-config": "1.0.0",
+    "@types/prettier": "^2.7.2",
+    "c8": "^7.12.0",
     "prettier": "2.5.1",
     "tsup": "^6.6.2",
     "typescript": "4.5.4",

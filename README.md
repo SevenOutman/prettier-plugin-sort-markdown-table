@@ -1,35 +1,50 @@
-**💛 You can help the author become a full-time open-source maintainer by [sponsoring him on GitHub](https://github.com/sponsors/egoist).**
+# prettier-plugin-sort-markdown-table
 
----
+[![npm version](https://badgen.net/npm/v/prettier-plugin-sort-markdown-table)](https://npm.im/prettier-plugin-sort-markdown-table) [![npm downloads](https://badgen.net/npm/dm/prettier-plugin-sort-markdown-table)](https://npm.im/prettier-plugin-sort-markdown-table)
 
-# my-ts-lib
-
-[![npm version](https://badgen.net/npm/v/my-ts-lib)](https://npm.im/my-ts-lib) [![npm downloads](https://badgen.net/npm/dm/my-ts-lib)](https://npm.im/my-ts-lib)
-
-## Using this template
-
-- Search `my-ts-lib` and replace it with your custom package name.
-- Search `egoist` and replace it with your name.
-
-Features:
-
-- Package manager [pnpm](https://pnpm.js.org/), safe and fast
-- Release with [semantic-release](https://npm.im/semantic-release)
-- Bundle with [tsup](https://github.com/egoist/tsup)
-- Test with [vitest](https://vitest.dev)
-
-To skip CI (GitHub action), add `skip-ci` to commit message. To skip release, add `skip-release` to commit message.
+Prettier plugin that sorts markdown tables according to their first column.
 
 ## Install
 
 ```bash
-npm i my-ts-lib
+npm i -D prettier-plugin-sort-markdown-table
 ```
 
-## Sponsors
+Prettier [should automatically load this plugin](https://prettier.io/docs/en/plugins.html#using-plugins) once it's installed, you don't have to do manual configuration.
 
-[![sponsors](https://sponsors-images.egoist.sh/sponsors.svg)](https://github.com/sponsors/egoist)
+## Usage
+
+Annotate tables you want to sort with `<!-- prettier-sort-markdown-table -->` comment.
+
+For example:
+
+<!-- prettier-ignore-start -->
+```markdown
+<!-- prettier-sort-markdown-table -->
+| name | email | description |
+| -- | -- | --- |
+| zhang | zhang@a.com  | zhang  |
+| wang | wang@a.com   | wang |
+| li | li@a.com   | li  |
+| amity | amity@a.com  | amity  |
+| batman | batman@a.com | batman |
+```
+<!-- prettier-ignore-end -->
+
+Becomes:
+
+```markdown
+<!-- prettier-sort-markdown-table -->
+
+| name   | email        | description |
+| ------ | ------------ | ----------- |
+| amity  | amity@a.com  | amity       |
+| batman | batman@a.com | batman      |
+| li     | li@a.com     | li          |
+| wang   | wang@a.com   | wang        |
+| zhang  | zhang@a.com  | zhang       |
+```
 
 ## License
 
-MIT &copy; [EGOIST](https://github.com/sponsors/egoist)
+MIT &copy; [Doma](https://doma.land)
