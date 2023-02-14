@@ -1,6 +1,6 @@
 import { test, assert } from "vitest"
 import prettier from "prettier"
-import plugin from "../src"
+import * as plugin from "../src"
 
 test("Sort markdown table following prettier-sort-markdown-table annotation", () => {
   const markdown = `
