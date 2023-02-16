@@ -25,6 +25,7 @@
     "build-fast": "tsup src/index.ts --format cjs,esm",
     "build": "pnpm run build-fast -- --dts-resolve",
     "test": "vitest run",
+    "test:coverage": "pnpm test -- --coverage",
     "prepublishOnly": "pnpm run build"
   },
   "license": "MIT",
