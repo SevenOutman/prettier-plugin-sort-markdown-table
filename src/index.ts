@@ -3,6 +3,13 @@ import { parsers as prettierMarkdownParsers } from "prettier/parser-markdown"
 
 const markdownParser = prettierMarkdownParsers["markdown"]
 
+/**
+ * Get trimmed text of the first cell of a markdown table row
+ */
+function getFirstCellText(row: string): string {
+  return row.split("|")[1].trim()
+}
+
 export const parsers: Plugin["parsers"] = {
   markdown: {
     ...markdownParser,
@@ -28,7 +35,12 @@ export const parsers: Plugin["parsers"] = {
           const tableHeaderLines = [lines.shift(), lines.shift()]
 
           // Sort table body rows here
-          const tableBodyLines = lines.filter(Boolean).sort()
+          const tableBodyLines = lines
+            // Filter out trailing newlines
+            .filter(Boolean)
+            .sort((row1, row2) =>
+              getFirstCellText(row1).localeCompare(getFirstCellText(row2)),
+            )
 
           // The regex matched trailing newlines following the table
           const trailingNewlines = lines.slice(tableBodyLines.length)

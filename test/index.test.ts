@@ -8,7 +8,7 @@ test("Sort markdown table following prettier-sort-markdown-table annotation", ()
 | name | email | description |
 | -- | -- | --- |
 | zhang | zhang@a.com  | zhang  |
-| wang | wang@a.com   | wang |
+|  wang | wang@a.com   | wang |
 | li | li@a.com   | li  |
 | amity | amity@a.com  | amity  |
 | batman | batman@a.com | batman |
