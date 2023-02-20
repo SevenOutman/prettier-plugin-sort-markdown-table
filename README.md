@@ -1,6 +1,7 @@
 # prettier-plugin-sort-markdown-table
 
 [![npm version](https://badgen.net/npm/v/prettier-plugin-sort-markdown-table)](https://npm.im/prettier-plugin-sort-markdown-table) [![npm downloads](https://badgen.net/npm/dm/prettier-plugin-sort-markdown-table)](https://npm.im/prettier-plugin-sort-markdown-table)
+[![codecov](https://codecov.io/gh/SevenOutman/prettier-plugin-sort-markdown-table/branch/master/graph/badge.svg?token=uIMN9ySxM2)](https://codecov.io/gh/SevenOutman/prettier-plugin-sort-markdown-table)
 
 Prettier plugin that sorts markdown tables according to their first column.
 
