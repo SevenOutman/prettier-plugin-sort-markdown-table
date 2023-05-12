@@ -43,6 +43,6 @@
     "vitest": "0.12.6"
   },
   "peerDependencies": {
-    "prettier": "2.5.1"
+    "prettier": "^2.5.1"
   }
 }
