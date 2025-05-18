@@ -22,13 +22,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: false
+
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
-
-      - name: Install pnpm
-        run: npm i -g pnpm
 
       - name: Install deps
         run: pnpm i
@@ -48,11 +50,14 @@ jobs:
     if: "!contains(github.event.head_commit.message, 'skip-release') && !contains(github.event.head_commit.message, 'skip-ci') && github.event_name != 'pull_request'"
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          run_install: false
       - uses: actions/setup-node@v4
         with:
           node-version: lts/Jod
           cache: pnpm
-      - run: npm i -g pnpm
       - run: pnpm i
       - run: pnpm dlx semantic-release --branches main
         env:
