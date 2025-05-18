@@ -1,4 +1,4 @@
-import { test, assert } from "vitest"
+import { test, expect } from "vitest"
 import prettier from "prettier"
 import * as plugin from "../src"
 
@@ -25,11 +25,10 @@ test("Sort markdown table following prettier-sort-markdown-table annotation", ()
 | zhang  | zhang@a.com  | zhang       |
 `
 
-  assert.equal(
+  expect(
     prettier.format(markdown, {
       parser: "markdown",
       plugins: [plugin],
     }),
-    formatted,
-  )
+  ).resolves.toBe(formatted)
 })
