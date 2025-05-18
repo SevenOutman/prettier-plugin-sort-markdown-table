@@ -1,7 +1,7 @@
 import type { Plugin } from "prettier"
-import { parsers as prettierMarkdownParsers } from "prettier/parser-markdown"
+import parserMarkdown from "prettier/parser-markdown"
 
-const markdownParser = prettierMarkdownParsers["markdown"]
+const markdownParser = parserMarkdown.parsers.markdown
 
 /**
  * Get trimmed text of the first cell of a markdown table row
