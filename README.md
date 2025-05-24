@@ -5,13 +5,22 @@
 
 Prettier plugin that sorts markdown tables according to their first column.
 
+> This version of the plugin only works with Prettier 3.
+> For Prettier 2, please use [1.x](https://github.com/SevenOutman/prettier-plugin-sort-markdown-table/tree/1.x).
+
 ## Install
 
 ```bash
 npm i -D prettier-plugin-sort-markdown-table
 ```
 
-Prettier [should automatically load this plugin](https://prettier.io/docs/en/plugins.html#using-plugins) once it's installed, you don't have to do manual configuration.
+Add the plugin to your Prettier configuration file:
+
+```json
+{
+  "plugins": ["prettier-plugin-sort-markdown-table"]
+}
+```
 
 ## Usage
 
